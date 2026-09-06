@@ -81,13 +81,13 @@ spec:
                 name: fahad-config
           readinessProbe:
             httpGet:
-              path: /openapi.json
+              path: /health/ready
               port: http
             initialDelaySeconds: 5
             periodSeconds: 10
           livenessProbe:
             httpGet:
-              path: /openapi.json
+              path: /health/live
               port: http
             initialDelaySeconds: 10
             periodSeconds: 15
@@ -125,7 +125,7 @@ metadata:
   annotations:
     alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/target-type: ip
-    alb.ingress.kubernetes.io/healthcheck-path: /openapi.json
+    alb.ingress.kubernetes.io/healthcheck-path: /health/ready
 spec:
   ingressClassName: alb
   rules:
@@ -141,9 +141,8 @@ spec:
                   name: http
 ```
 
-> Probes hit `/openapi.json` (always 200) so this works without a health route. Add
-> a dedicated `/health` endpoint later and point the probes and
-> `healthcheck-path` at it.
+> Probes use the app's health endpoints: `/health/live` (liveness) and
+> `/health/ready` (readiness), served by `app/health/router.py`.
 
 ## 4. Apply and verify
 

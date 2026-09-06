@@ -94,8 +94,9 @@ app/settings.py         Typed Settings from env vars, cached via get_settings()
 app/main.py             create_app() factory, `app`, and the uvicorn entrypoint (python -m app.main)
 app/feature/service.py  Async business logic
 app/feature/router.py   APIRouter + Pydantic request/response models
+app/health/router.py    Liveness/readiness endpoints (/health/live, /health/ready)
 tests/                  pytest + FastAPI TestClient
-deployment/             Placeholder for Kubernetes manifests (none yet)
+deployment/             Kubernetes manifests (ConfigMap, Deployment, Service, Ingress)
 docs/                   Guides: db.README.md, deployment.README.md
 RUNBOOK.md              Start-from-scratch + add-a-feature runbook
 ```
