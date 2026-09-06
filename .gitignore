@@ -1,0 +1,22 @@
+# Ignore everything at the repo root by default...
+/*
+
+# ...then track only the project files and directories.
+!/app/
+!/tests/
+!/deployment/
+!/.dockerignore
+!/.env.example
+!/.gitignore
+!/Dockerfile
+!/README.md
+!/RUNBOOK.md
+!/docs/
+!/compose.yaml
+!/pyproject.toml
+!/uv.lock
+
+# Still ignore junk inside tracked directories.
+__pycache__/
+*.py[cod]
+.DS_Store

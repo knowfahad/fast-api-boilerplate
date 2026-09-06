@@ -1,0 +1,12 @@
+services:
+  api:
+    build: .
+    ports:
+      - "${PORT:-8000}:${PORT:-8000}"
+    environment:
+      APP_NAME: ${APP_NAME:-fahad}
+      HOST: 0.0.0.0
+      PORT: ${PORT:-8000}
+      WORKERS: ${WORKERS:-1}
+      LOG_LEVEL: ${LOG_LEVEL:-info}
+    restart: unless-stopped

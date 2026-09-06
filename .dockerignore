@@ -1,0 +1,11 @@
+# Deny everything by default, then allow only what the build needs.
+*
+
+!app/
+!pyproject.toml
+!uv.lock
+
+# Re-exclude junk that can appear under allowed paths.
+**/__pycache__/
+**/*.py[cod]
+**/.DS_Store
