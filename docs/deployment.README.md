@@ -37,8 +37,10 @@ docker push $IMAGE
 
 ## 3. Manifests
 
-Save as `deployment/eks.yaml` and set `image:` to the tag you pushed, plus the
-Ingress `host:`.
+The manifests live in `deployment/` (`configmap.yaml`, `deployment.yaml`,
+`service.yaml`, `ingress.yaml`). Set `image:` in `deployment/deployment.yaml` to the
+tag you pushed, plus the Ingress `host:`. The block below is the same content for
+reference.
 
 ```yaml
 apiVersion: v1
@@ -146,7 +148,7 @@ spec:
 ## 4. Apply and verify
 
 ```bash
-kubectl apply -f deployment/eks.yaml
+kubectl apply -f deployment/
 kubectl rollout status deployment/fahad
 kubectl get pods -l app=fahad
 kubectl get ingress fahad                 # wait for the ALB ADDRESS

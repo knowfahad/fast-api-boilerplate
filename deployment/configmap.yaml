@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: fahad-config
+data:
+  APP_NAME: fahad
+  HOST: "0.0.0.0"
+  PORT: "8000"
+  WORKERS: "2"
+  LOG_LEVEL: info
