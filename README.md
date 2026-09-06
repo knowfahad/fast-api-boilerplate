@@ -1,9 +1,10 @@
-# fahad
+# Minimal fast-api boilerplate 
 
-Minimal async FastAPI service: Python 3.12, `uv`, Pydantic v2, uvicorn. One example
-feature (a greeting endpoint) that shows a router, an async service function, and
-request/response models. No database, no auth, no CI — just enough to add a feature
-fast and ship it to Kubernetes.
+### I carefully AI-coded this for my own projects but if someone wants to use it, feel free! :) 
+
+Minimal async FastAPI service using Python 3.12, uv, Pydantic v2, and Uvicorn. Includes a greeting endpoint demonstrating routing, async service logic, and request/response models. No database, authentication, or CI—just enough to build quickly and deploy to Kubernetes.
+
+You can extend the db quite easily, refer to the docs. Also provided the kubernetes yamls for convenience. 
 
 ## Requirements
 
